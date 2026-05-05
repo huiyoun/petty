@@ -30,6 +30,19 @@ Petty is an experimental early MVP. It works as a hackable macOS interface for a
 
 ### Quick Start
 
+Install Xcode command line tools if this is your first time building a macOS project:
+
+```sh
+xcode-select --install
+```
+
+Clone the repository:
+
+```sh
+git clone https://github.com/huiyoun/petty.git
+cd petty
+```
+
 Build and install Petty into your user Applications folder:
 
 ```sh
@@ -233,6 +246,19 @@ Petty는 아직 실험적인 초기 MVP입니다. 개인 에이전트를 위한 
 - `~/.codex/pets`에서 Codex-compatible pet pack 렌더링
 
 ### 빠른 시작
+
+macOS 프로젝트를 처음 빌드한다면 Xcode command line tools를 먼저 설치합니다:
+
+```sh
+xcode-select --install
+```
+
+레포를 clone합니다:
+
+```sh
+git clone https://github.com/huiyoun/petty.git
+cd petty
+```
 
 Petty를 빌드해서 사용자 Applications 폴더에 설치합니다:
 

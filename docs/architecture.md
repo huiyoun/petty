@@ -7,6 +7,7 @@ Petty is a small macOS desktop frontend for an AI agent the user already runs.
 - Floating Pet Window: a transparent, borderless AppKit panel that hosts the SwiftUI pet view. It stays above regular windows and can be dragged around the screen.
 - Chat Panel: a compact floating AppKit panel that hosts the SwiftUI chat UI. It appears near the pet when the user clicks the pet.
 - Speech Bubble Panel: a transparent, non-interactive AppKit panel that appears above the pet for short agent replies and errors.
+- Pet Pack Renderer: loads Codex-compatible `pet.json` and `spritesheet.webp` assets from `~/.codex/pets` so existing Codex pet designs can be displayed directly.
 - Pet State Manager: `AppModel` owns the visible chat messages, speech bubble text, and the current `PetState`.
 - Agent Bridge: `AgentBridge` defines the app-to-agent boundary. `LocalCommandAgentBridge` supports synchronous command wrappers. `TelegramUserAgentBridge` keeps one Telegram user relay process open while Petty is running so multi-message agent replies can arrive asynchronously.
 - Settings Window: a menu bar-accessible SwiftUI settings surface for custom commands, Telegram user relay values, and local pet pack selection.

@@ -6,6 +6,8 @@ It sits on your desktop, opens a compact chat panel when clicked, and forwards y
 
 Petty does not implement a new AI agent. It is a lightweight desktop interface for agents you already run, such as OpenClaw, Hermes, Codex CLI, Gemini CLI, or your own scripts.
 
+Petty can reuse Codex-compatible pet designs as-is. If you already have a Codex pet pack with `pet.json` and `spritesheet.webp`, Petty can scan it from `~/.codex/pets` and render the same pixel pet on your desktop.
+
 ## Status
 
 Petty is an experimental early MVP. It is useful as a hackable macOS interface for a personal agent, but it is not packaged, notarized, sandboxed, or App Store-ready yet.
@@ -20,7 +22,7 @@ Petty is an experimental early MVP. It is useful as a hackable macOS interface f
 - JSON stdout response parsing
 - Pet states: `idle`, `thinking`, `success`, `error`
 - Short pet speech bubbles for agent responses and errors
-- Codex-compatible pet pack rendering from `~/.codex/pets`
+- Codex-compatible pet pack rendering from `~/.codex/pets`, so existing Codex pet designs can be reused without conversion
 - macOS menu bar item for chat, settings, config reload, and quit
 - Telegram user relay with a persistent bridge process for multi-message agent replies
 - Local chat history persistence with a menu bar clear action
@@ -219,9 +221,11 @@ open "DerivedData/Build/Products/Debug/Petty.app"
 
 ## Assets
 
-Petty does not bundle third-party pet assets by default. Imported pet packs remain under their original creators' rights and licenses.
+Petty is designed to use Codex-compatible pet packs directly. A pet design made for Codex pets can be reused in Petty without changing the artwork, as long as the pack includes the expected `pet.json` and `spritesheet.webp` files.
 
 Petty scans `~/.codex/pets/<pet-id>/pet.json` and `spritesheet.webp`. The MVP expects the Codex-compatible `1536x1872` atlas with `192x208` cells. See [docs/pet-pack-format.md](docs/pet-pack-format.md).
+
+Petty does not bundle third-party pet assets by default. Imported pet packs remain under their original creators' rights and licenses.
 
 ## Build
 

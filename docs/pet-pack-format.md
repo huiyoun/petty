@@ -2,6 +2,8 @@
 
 Petty reads Codex-compatible pet packs created by tools such as `hatch-pet`.
 
+The goal is direct reuse: a pet design that already works as a Codex pet should work in Petty without converting the artwork or changing the spritesheet layout. Petty only needs the same `pet.json` metadata and `spritesheet.webp` atlas.
+
 ## Location
 
 Petty scans:
@@ -16,6 +18,8 @@ Each pet folder must include:
 pet.json
 spritesheet.webp
 ```
+
+This matches the common Codex pet pack shape, so users can point Petty at their existing `~/.codex/pets` collection instead of maintaining a separate Petty-only asset library.
 
 ## Manifest
 
@@ -77,3 +81,5 @@ Optional animation overrides can be placed under `animations` or `states`:
 ## Safety
 
 Petty reads only `pet.json` and `spritesheet.webp`. It does not run install commands, scripts, hooks, or other executable files from pet packs.
+
+Petty does not claim ownership of imported Codex pet designs. Keep each pack's original attribution, creator metadata, and license terms.

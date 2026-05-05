@@ -202,6 +202,28 @@ When Petty is running, a paw icon stays in the macOS menu bar.
 - `Clear Chat History`: deletes local `history.json` and resets the chat view
 - `Quit Petty`: exits the app
 
+## Install as an App
+
+For local use, install the debug app bundle into your user Applications folder:
+
+```sh
+scripts/install-app.sh
+```
+
+This builds Petty and copies it to:
+
+```text
+~/Applications/Petty.app
+```
+
+After that, Petty can be launched from Finder, Spotlight, Raycast, Alfred, or:
+
+```sh
+open ~/Applications/Petty.app
+```
+
+Petty runs as a menu bar accessory app, so it does not show a Dock icon. To turn it off, use the Petty menu bar item and choose `Quit Petty`.
+
 ## Run Locally
 
 ```sh

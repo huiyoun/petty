@@ -1,8 +1,10 @@
 import AppKit
+import Combine
 import SwiftUI
 
 final class ChatPanelController: NSWindowController, NSWindowDelegate {
     private let model: AppModel
+    private var titleCancellable: AnyCancellable?
 
     init(model: AppModel) {
         self.model = model
@@ -26,6 +28,12 @@ final class ChatPanelController: NSWindowController, NSWindowDelegate {
 
         super.init(window: panel)
         panel.delegate = self
+        titleCancellable = model.$chatTitle
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak panel] title in
+                panel?.title = title
+            }
     }
 
     @available(*, unavailable)

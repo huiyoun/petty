@@ -35,6 +35,11 @@ struct TelegramUserAgentConfiguration {
         return arguments
     }
 
+    var displayName: String {
+        let preferred = replyFrom.isEmpty ? chat : replyFrom
+        return Self.cleanDisplayName(preferred)
+    }
+
     static func parse(_ config: AgentCommandConfiguration) -> TelegramUserAgentConfiguration? {
         let commandName = URL(fileURLWithPath: config.command).lastPathComponent
         let arguments = config.arguments
@@ -90,6 +95,22 @@ struct TelegramUserAgentConfiguration {
             replyFrom: replyFrom,
             prefix: prefix
         )
+    }
+
+    private static func cleanDisplayName(_ value: String) -> String {
+        var cleaned = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        for prefix in ["telegram:", "tg:", "chat:"] {
+            if cleaned.lowercased().hasPrefix(prefix) {
+                cleaned = String(cleaned.dropFirst(prefix.count))
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+            }
+        }
+
+        if cleaned.hasPrefix("@") {
+            cleaned.removeFirst()
+        }
+
+        return cleaned.isEmpty ? "Telegram Agent" : cleaned
     }
 }
 

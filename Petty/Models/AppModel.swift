@@ -12,6 +12,7 @@ final class AppModel: ObservableObject {
     @Published var errorText: String?
     @Published var petSpeech: String?
     @Published var isSending = false
+    @Published private(set) var chatTitle = "Petty"
     @Published private(set) var appConfig: AppConfig
     @Published private(set) var petPack: PetPack?
     @Published private(set) var isChatPanelVisible = false
@@ -107,9 +108,12 @@ final class AppModel: ObservableObject {
         telegramBridge = nil
 
         guard let telegramConfiguration = TelegramUserAgentConfiguration.parse(configuration) else {
+            chatTitle = "Petty"
             bridge = LocalCommandAgentBridge(configuration: configuration)
             return
         }
+
+        chatTitle = telegramConfiguration.displayName
 
         do {
             let bridge = try TelegramUserAgentBridge(

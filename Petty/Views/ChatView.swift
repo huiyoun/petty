@@ -26,8 +26,10 @@ struct ChatView: View {
                 .fill(model.petState.bodyColor)
                 .frame(width: 12, height: 12)
 
-            Text("Petty")
+            Text(model.chatTitle)
                 .font(.headline)
+                .lineLimit(1)
+                .truncationMode(.tail)
 
             Spacer()
 

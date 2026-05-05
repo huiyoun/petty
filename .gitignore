@@ -1,0 +1,17 @@
+.DS_Store
+DerivedData/
+build/
+.venv/
+*.xcuserstate
+xcuserdata/
+*.session
+*.session-journal
+.env
+.env.*
+*.log
+__pycache__/
+*.pyc
+config.json
+history.json
+Petty/config.json
+.petty/

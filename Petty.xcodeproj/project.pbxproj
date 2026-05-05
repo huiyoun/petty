@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		100000000000000000000101 /* PettyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000001 /* PettyApp.swift */; };
+		100000000000000000000102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000002 /* AppDelegate.swift */; };
+		100000000000000000000103 /* PetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* PetState.swift */; };
+		100000000000000000000104 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* ChatMessage.swift */; };
+		100000000000000000000105 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* AppConfig.swift */; };
+		100000000000000000000106 /* AgentCommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* AgentCommandResponse.swift */; };
+		100000000000000000000107 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* AppModel.swift */; };
+		100000000000000000000108 /* AgentBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* AgentBridge.swift */; };
+		100000000000000000000109 /* LocalCommandAgentBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000009 /* LocalCommandAgentBridge.swift */; };
+		100000000000000000000110 /* ConfigurationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* ConfigurationStore.swift */; };
+		100000000000000000000111 /* PetWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000011 /* PetWindowController.swift */; };
+		100000000000000000000112 /* ChatPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000012 /* ChatPanelController.swift */; };
+		100000000000000000000113 /* PetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000013 /* PetView.swift */; };
+		100000000000000000000114 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000014 /* ChatView.swift */; };
+		100000000000000000000115 /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000015 /* MessageBubbleView.swift */; };
+		100000000000000000000116 /* mock-agent.sh in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000016 /* mock-agent.sh */; };
+		100000000000000000000117 /* PetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000018 /* PetAnimation.swift */; };
+		100000000000000000000118 /* PetPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000019 /* PetPack.swift */; };
+		100000000000000000000119 /* PetPackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000020 /* PetPackLoader.swift */; };
+		100000000000000000000120 /* LocalPetPackStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000021 /* LocalPetPackStore.swift */; };
+		100000000000000000000121 /* SpritePetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000022 /* SpritePetView.swift */; };
+		100000000000000000000122 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000023 /* SettingsWindowController.swift */; };
+		100000000000000000000123 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000024 /* StatusBarController.swift */; };
+		100000000000000000000124 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000025 /* SettingsView.swift */; };
+		100000000000000000000125 /* openclaw-ssh-agent.sh in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000026 /* openclaw-ssh-agent.sh */; };
+		100000000000000000000126 /* http-agent.sh in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000027 /* http-agent.sh */; };
+		100000000000000000000128 /* telegram-agent.py in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000029 /* telegram-agent.py */; };
+		100000000000000000000129 /* telegram-user-agent.py in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000030 /* telegram-user-agent.py */; };
+		100000000000000000000130 /* TelegramUserAgentBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000031 /* TelegramUserAgentBridge.swift */; };
+		100000000000000000000131 /* ChatHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000032 /* ChatHistoryStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		100000000000000000000001 /* PettyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PettyApp.swift; sourceTree = "<group>"; };
+		100000000000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		100000000000000000000003 /* PetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetState.swift; sourceTree = "<group>"; };
+		100000000000000000000004 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		100000000000000000000005 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		100000000000000000000006 /* AgentCommandResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCommandResponse.swift; sourceTree = "<group>"; };
+		100000000000000000000007 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		100000000000000000000008 /* AgentBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentBridge.swift; sourceTree = "<group>"; };
+		100000000000000000000009 /* LocalCommandAgentBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCommandAgentBridge.swift; sourceTree = "<group>"; };
+		100000000000000000000010 /* ConfigurationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationStore.swift; sourceTree = "<group>"; };
+		100000000000000000000011 /* PetWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWindowController.swift; sourceTree = "<group>"; };
+		100000000000000000000012 /* ChatPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPanelController.swift; sourceTree = "<group>"; };
+		100000000000000000000013 /* PetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetView.swift; sourceTree = "<group>"; };
+		100000000000000000000014 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		100000000000000000000015 /* MessageBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
+		100000000000000000000016 /* mock-agent.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "mock-agent.sh"; sourceTree = "<group>"; };
+		100000000000000000000017 /* Petty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		100000000000000000000018 /* PetAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAnimation.swift; sourceTree = "<group>"; };
+		100000000000000000000019 /* PetPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPack.swift; sourceTree = "<group>"; };
+		100000000000000000000020 /* PetPackLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPackLoader.swift; sourceTree = "<group>"; };
+		100000000000000000000021 /* LocalPetPackStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPetPackStore.swift; sourceTree = "<group>"; };
+		100000000000000000000022 /* SpritePetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpritePetView.swift; sourceTree = "<group>"; };
+		100000000000000000000023 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
+		100000000000000000000024 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		100000000000000000000025 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		100000000000000000000026 /* openclaw-ssh-agent.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "openclaw-ssh-agent.sh"; sourceTree = "<group>"; };
+		100000000000000000000027 /* http-agent.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "http-agent.sh"; sourceTree = "<group>"; };
+		100000000000000000000029 /* telegram-agent.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "telegram-agent.py"; sourceTree = "<group>"; };
+		100000000000000000000030 /* telegram-user-agent.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "telegram-user-agent.py"; sourceTree = "<group>"; };
+		100000000000000000000031 /* TelegramUserAgentBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramUserAgentBridge.swift; sourceTree = "<group>"; };
+		100000000000000000000032 /* ChatHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistoryStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		100000000000000000000201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		100000000000000000000301 = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000302 /* Petty */,
+				100000000000000000000306 /* scripts */,
+				100000000000000000000307 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		100000000000000000000302 /* Petty */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000001 /* PettyApp.swift */,
+				100000000000000000000002 /* AppDelegate.swift */,
+				100000000000000000000303 /* Windows */,
+				100000000000000000000304 /* Views */,
+				100000000000000000000305 /* Models */,
+				100000000000000000000308 /* Services */,
+			);
+			path = Petty;
+			sourceTree = "<group>";
+		};
+		100000000000000000000303 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000011 /* PetWindowController.swift */,
+				100000000000000000000012 /* ChatPanelController.swift */,
+				100000000000000000000023 /* SettingsWindowController.swift */,
+				100000000000000000000024 /* StatusBarController.swift */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		100000000000000000000304 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000013 /* PetView.swift */,
+				100000000000000000000022 /* SpritePetView.swift */,
+				100000000000000000000014 /* ChatView.swift */,
+				100000000000000000000025 /* SettingsView.swift */,
+				100000000000000000000015 /* MessageBubbleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		100000000000000000000305 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000003 /* PetState.swift */,
+				100000000000000000000018 /* PetAnimation.swift */,
+				100000000000000000000019 /* PetPack.swift */,
+				100000000000000000000004 /* ChatMessage.swift */,
+				100000000000000000000005 /* AppConfig.swift */,
+				100000000000000000000006 /* AgentCommandResponse.swift */,
+				100000000000000000000007 /* AppModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		100000000000000000000306 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000016 /* mock-agent.sh */,
+				100000000000000000000026 /* openclaw-ssh-agent.sh */,
+				100000000000000000000027 /* http-agent.sh */,
+				100000000000000000000029 /* telegram-agent.py */,
+				100000000000000000000030 /* telegram-user-agent.py */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		100000000000000000000307 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000017 /* Petty.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		100000000000000000000308 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000008 /* AgentBridge.swift */,
+				100000000000000000000009 /* LocalCommandAgentBridge.swift */,
+				100000000000000000000031 /* TelegramUserAgentBridge.swift */,
+				100000000000000000000010 /* ConfigurationStore.swift */,
+				100000000000000000000032 /* ChatHistoryStore.swift */,
+				100000000000000000000020 /* PetPackLoader.swift */,
+				100000000000000000000021 /* LocalPetPackStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		100000000000000000000401 /* Petty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000701 /* Build configuration list for PBXNativeTarget "Petty" */;
+			buildPhases = (
+				100000000000000000000501 /* Sources */,
+				100000000000000000000201 /* Frameworks */,
+				100000000000000000000601 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Petty;
+			productName = Petty;
+			productReference = 100000000000000000000017 /* Petty.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		100000000000000000000801 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					100000000000000000000401 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 100000000000000000000702 /* Build configuration list for PBXProject "Petty" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 100000000000000000000301;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 100000000000000000000307 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				100000000000000000000401 /* Petty */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		100000000000000000000601 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000116 /* mock-agent.sh in Resources */,
+				100000000000000000000125 /* openclaw-ssh-agent.sh in Resources */,
+				100000000000000000000126 /* http-agent.sh in Resources */,
+				100000000000000000000128 /* telegram-agent.py in Resources */,
+				100000000000000000000129 /* telegram-user-agent.py in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		100000000000000000000501 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000101 /* PettyApp.swift in Sources */,
+				100000000000000000000102 /* AppDelegate.swift in Sources */,
+				100000000000000000000103 /* PetState.swift in Sources */,
+				100000000000000000000117 /* PetAnimation.swift in Sources */,
+				100000000000000000000118 /* PetPack.swift in Sources */,
+				100000000000000000000104 /* ChatMessage.swift in Sources */,
+				100000000000000000000105 /* AppConfig.swift in Sources */,
+				100000000000000000000106 /* AgentCommandResponse.swift in Sources */,
+				100000000000000000000107 /* AppModel.swift in Sources */,
+				100000000000000000000108 /* AgentBridge.swift in Sources */,
+				100000000000000000000109 /* LocalCommandAgentBridge.swift in Sources */,
+				100000000000000000000130 /* TelegramUserAgentBridge.swift in Sources */,
+				100000000000000000000110 /* ConfigurationStore.swift in Sources */,
+				100000000000000000000131 /* ChatHistoryStore.swift in Sources */,
+				100000000000000000000119 /* PetPackLoader.swift in Sources */,
+				100000000000000000000120 /* LocalPetPackStore.swift in Sources */,
+				100000000000000000000111 /* PetWindowController.swift in Sources */,
+				100000000000000000000112 /* ChatPanelController.swift in Sources */,
+				100000000000000000000122 /* SettingsWindowController.swift in Sources */,
+				100000000000000000000123 /* StatusBarController.swift in Sources */,
+				100000000000000000000113 /* PetView.swift in Sources */,
+				100000000000000000000121 /* SpritePetView.swift in Sources */,
+				100000000000000000000114 /* ChatView.swift in Sources */,
+				100000000000000000000124 /* SettingsView.swift in Sources */,
+				100000000000000000000115 /* MessageBubbleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		100000000000000000000901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		100000000000000000000902 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		100000000000000000000903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Petty;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.petty.Petty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		100000000000000000000904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Petty;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.petty.Petty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		100000000000000000000701 /* Build configuration list for PBXNativeTarget "Petty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000903 /* Debug */,
+				100000000000000000000904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		100000000000000000000702 /* Build configuration list for PBXProject "Petty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000901 /* Debug */,
+				100000000000000000000902 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 100000000000000000000801 /* Project object */;
+}

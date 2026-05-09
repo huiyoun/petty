@@ -20,6 +20,7 @@ final class AppModel: ObservableObject {
 
     private var bridge: AgentBridge
     private var telegramBridge: TelegramUserAgentBridge?
+    private var automaticChatTitle = "Petty"
     private var speechToken: UUID?
     private var stateBeforeDrag: PetState?
 
@@ -44,6 +45,22 @@ final class AppModel: ObservableObject {
         dismissPetSpeech()
         configureAgentBridge(configuration.agent)
         messages.append(ChatMessage(role: .system, text: "Settings updated."))
+    }
+
+    func setChatDisplayName(_ rawName: String) {
+        let trimmedName = rawName.trimmingCharacters(in: .whitespacesAndNewlines)
+        var updatedConfig = appConfig
+        updatedConfig.chatDisplayName = trimmedName.isEmpty ? nil : trimmedName
+
+        do {
+            try ConfigurationStore.save(updatedConfig)
+            appConfig = updatedConfig
+            updateChatTitle()
+            errorText = nil
+            messages.append(ChatMessage(role: .system, text: "Chat name updated."))
+        } catch {
+            errorText = "Failed to save chat name: \(error.localizedDescription)"
+        }
     }
 
     func chatPanelDidOpen() {
@@ -110,12 +127,14 @@ final class AppModel: ObservableObject {
         telegramBridge = nil
 
         guard let telegramConfiguration = TelegramUserAgentConfiguration.parse(configuration) else {
-            chatTitle = "Petty"
+            automaticChatTitle = "Petty"
+            updateChatTitle()
             bridge = LocalCommandAgentBridge(configuration: configuration)
             return
         }
 
-        chatTitle = telegramConfiguration.displayName
+        automaticChatTitle = telegramConfiguration.displayName
+        updateChatTitle()
 
         do {
             let bridge = try TelegramUserAgentBridge(
@@ -140,6 +159,17 @@ final class AppModel: ObservableObject {
         } catch {
             bridge = LocalCommandAgentBridge(configuration: configuration)
             receiveAgentError(error.localizedDescription)
+        }
+    }
+
+    private func updateChatTitle() {
+        let customTitle = appConfig.chatDisplayName?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if let customTitle, !customTitle.isEmpty {
+            chatTitle = customTitle
+        } else {
+            chatTitle = automaticChatTitle
         }
     }
 

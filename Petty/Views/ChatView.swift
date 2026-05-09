@@ -8,6 +8,9 @@ extension Notification.Name {
 struct ChatView: View {
     @ObservedObject var model: AppModel
     @State private var draft = ""
+    @State private var titleDraft = ""
+    @State private var isEditingTitle = false
+    @FocusState private var isTitleFieldFocused: Bool
 
     var body: some View {
         VStack(spacing: 0) {
@@ -26,10 +29,7 @@ struct ChatView: View {
                 .fill(model.petState.bodyColor)
                 .frame(width: 12, height: 12)
 
-            Text(model.chatTitle)
-                .font(.headline)
-                .lineLimit(1)
-                .truncationMode(.tail)
+            titleControl
 
             Spacer()
 
@@ -40,6 +40,56 @@ struct ChatView: View {
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
+    }
+
+    private var titleControl: some View {
+        HStack(spacing: 6) {
+            if isEditingTitle {
+                TextField("Chat name", text: $titleDraft)
+                    .font(.headline)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(maxWidth: 180)
+                    .focused($isTitleFieldFocused)
+                    .onSubmit(saveTitle)
+
+                titleIconButton(systemName: "checkmark", accessibilityLabel: "Save chat name") {
+                    saveTitle()
+                }
+
+                titleIconButton(systemName: "xmark", accessibilityLabel: "Cancel chat name edit") {
+                    cancelTitleEdit()
+                }
+            } else {
+                Text(model.chatTitle)
+                    .font(.headline)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+
+                titleIconButton(systemName: "pencil", accessibilityLabel: "Edit chat name") {
+                    beginTitleEdit()
+                }
+            }
+        }
+        .onChange(of: model.chatTitle) { _, newValue in
+            guard !isEditingTitle else { return }
+            titleDraft = newValue
+        }
+    }
+
+    private func titleIconButton(
+        systemName: String,
+        accessibilityLabel: String,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            Image(systemName: systemName)
+                .font(.system(size: 11, weight: .semibold))
+                .frame(width: 20, height: 20)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(.secondary)
+        .accessibilityLabel(accessibilityLabel)
     }
 
     private var messages: some View {
@@ -131,6 +181,26 @@ struct ChatView: View {
         let message = draft
         draft = ""
         model.send(message)
+    }
+
+    private func beginTitleEdit() {
+        titleDraft = model.chatTitle
+        isEditingTitle = true
+        DispatchQueue.main.async {
+            isTitleFieldFocused = true
+        }
+    }
+
+    private func saveTitle() {
+        model.setChatDisplayName(titleDraft)
+        isEditingTitle = false
+        isTitleFieldFocused = false
+    }
+
+    private func cancelTitleEdit() {
+        titleDraft = model.chatTitle
+        isEditingTitle = false
+        isTitleFieldFocused = false
     }
 }
 

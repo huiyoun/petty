@@ -3,6 +3,7 @@ import Foundation
 struct AppConfig: Codable {
     var agent: AgentCommandConfiguration
     var petId: String? = nil
+    var chatDisplayName: String? = nil
 }
 
 struct AgentCommandConfiguration: Codable {

@@ -322,7 +322,8 @@ struct SettingsView: View {
     private func save() {
         let config = AppConfig(
             agent: agentConfiguration(),
-            petId: selectedPetID.isEmpty ? nil : selectedPetID
+            petId: selectedPetID.isEmpty ? nil : selectedPetID,
+            chatDisplayName: model.appConfig.chatDisplayName
         )
 
         do {

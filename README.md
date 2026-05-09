@@ -198,6 +198,7 @@ When Petty is running, a paw icon stays in the macOS menu bar.
 - `Enter`: send
 - `Shift` + `Enter`: insert a new line
 - `Command` + `Enter`: send from the Send button shortcut
+- Pencil icon next to the chat title: rename the chat panel without opening Settings
 
 ### Codex-Compatible Pets
 
@@ -417,6 +418,7 @@ Petty가 실행 중이면 macOS 메뉴바에 발바닥 아이콘이 남아 있�
 - `Enter`: 전송
 - `Shift` + `Enter`: 줄바꿈
 - `Command` + `Enter`: Send 버튼 단축키로 전송
+- 채팅 제목 옆 연필 아이콘: Settings를 열지 않고 채팅창 이름 변경
 
 ### Codex-Compatible Pets
 

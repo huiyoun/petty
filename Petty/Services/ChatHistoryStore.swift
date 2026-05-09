@@ -16,6 +16,9 @@ enum ChatHistoryStore {
         do {
             let data = try Data(contentsOf: url)
             return try JSONDecoder().decode([ChatMessage].self, from: data)
+                .filter { message in
+                    !(message.role == .system && ephemeralSystemMessages.contains(message.text))
+                }
         } catch {
             return []
         }

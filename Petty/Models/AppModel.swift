@@ -26,8 +26,7 @@ final class AppModel: ObservableObject {
 
     init(configuration: AppConfig) {
         appConfig = configuration
-        let history = ChatHistoryStore.load()
-        messages = history.isEmpty ? [Self.readyMessage()] : history
+        messages = ChatHistoryStore.load()
         bridge = LocalCommandAgentBridge(configuration: configuration.agent)
         petPack = LocalPetPackStore.loadSelectedPetPack(preferredID: configuration.petId)
         configureAgentBridge(configuration.agent)
@@ -117,7 +116,7 @@ final class AppModel: ObservableObject {
 
     func clearHistory() {
         ChatHistoryStore.clear()
-        messages = [Self.readyMessage()]
+        messages = []
         errorText = nil
         dismissPetSpeech()
     }
@@ -234,9 +233,5 @@ final class AppModel: ObservableObject {
     private func dismissPetSpeech() {
         speechToken = nil
         petSpeech = nil
-    }
-
-    private static func readyMessage() -> ChatMessage {
-        ChatMessage(role: .system, text: "Petty is ready.")
     }
 }

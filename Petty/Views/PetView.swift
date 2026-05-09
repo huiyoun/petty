@@ -9,7 +9,11 @@ struct PetView: View {
 
             Group {
                 if let petPack = model.petPack {
-                    SpritePetView(petPack: petPack, petState: model.petState)
+                    SpritePetView(
+                        petPack: petPack,
+                        petState: model.petState,
+                        reloadToken: model.petRenderToken
+                    )
                 } else {
                     PixelPetView(state: model.petState)
                 }

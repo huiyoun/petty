@@ -205,6 +205,8 @@ Petty is designed to use Codex-compatible pet packs directly. A pet design made 
 
 Petty scans `~/.codex/pets/<pet-id>/pet.json` and `spritesheet.webp`. The MVP expects the Codex-compatible `1536x1872` atlas with `192x208` cells. See [docs/pet-pack-format.md](docs/pet-pack-format.md).
 
+To force Petty to use the built-in pixel pet instead of a Codex-compatible pet pack, choose `Normal (built-in)` in Settings or set `petId` to `normal`.
+
 Petty does not bundle third-party pet assets by default. Imported pet packs remain under their original creators' rights and licenses.
 
 ### Build
@@ -421,6 +423,8 @@ Petty가 실행 중이면 macOS 메뉴바에 발바닥 아이콘이 남아 있�
 Petty는 Codex-compatible pet pack을 직접 사용하는 방향으로 설계되어 있습니다. `pet.json`과 `spritesheet.webp`가 있는 Codex 펫 디자인이라면 아트워크를 바꾸지 않고 Petty에서 재사용할 수 있습니다.
 
 Petty는 `~/.codex/pets/<pet-id>/pet.json`과 `spritesheet.webp`를 읽습니다. MVP는 Codex-compatible `1536x1872` atlas와 `192x208` cell 구조를 기대합니다. 자세한 내용은 [docs/pet-pack-format.md](docs/pet-pack-format.md)를 참고하세요.
+
+Codex-compatible pet pack 대신 내장 픽셀 펫을 강제로 쓰려면 Settings에서 `Normal (built-in)`을 선택하거나 `petId`를 `normal`로 설정하면 됩니다.
 
 Petty는 기본적으로 제3자 pet asset을 포함하지 않습니다. 사용자가 가져온 pet pack은 원 제작자의 권리와 라이선스를 따릅니다.
 

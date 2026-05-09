@@ -4,6 +4,7 @@ import SwiftUI
 struct SpritePetView: View {
     let petPack: PetPack
     let petState: PetState
+    let reloadToken: UUID
 
     @State private var spritesheet: NSImage?
     @State private var frameIndex = 0
@@ -30,11 +31,13 @@ struct SpritePetView: View {
         }
         .frame(width: 96, height: 96)
         .onAppear {
-            loadSpritesheetIfNeeded()
-            resetFrameIfNeeded()
+            reloadSpritesheetIfNeeded()
         }
         .onChange(of: petState.rawValue) { _, _ in
             resetFrameIfNeeded()
+        }
+        .onChange(of: reloadToken) { _, _ in
+            reloadSpritesheet()
         }
         .onReceive(Timer.publish(every: timerInterval, on: .main, in: .common).autoconnect()) { _ in
             guard animation.frameCount > 1 else { return }
@@ -63,9 +66,16 @@ struct SpritePetView: View {
         return cgImage.cropping(to: cropRect)
     }
 
-    private func loadSpritesheetIfNeeded() {
+    private func reloadSpritesheetIfNeeded() {
         guard spritesheet == nil else { return }
+        reloadSpritesheet()
+    }
+
+    private func reloadSpritesheet() {
         spritesheet = NSImage(contentsOf: petPack.spritesheetURL)
+        animationKey = ""
+        frameIndex = 0
+        resetFrameIfNeeded()
     }
 
     private func resetFrameIfNeeded() {

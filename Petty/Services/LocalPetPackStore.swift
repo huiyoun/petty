@@ -1,6 +1,9 @@
 import Foundation
 
 enum LocalPetPackStore {
+    static let builtInPetID = "normal"
+    static let builtInPetDisplayName = "Normal (built-in)"
+
     static var petsDirectoryURL: URL {
         FileManager.default.homeDirectoryForCurrentUser
             .appendingPathComponent(".codex", isDirectory: true)
@@ -30,11 +33,23 @@ enum LocalPetPackStore {
 
     static func loadSelectedPetPack(preferredID: String?) -> PetPack? {
         let packs = loadPetPacks()
+        let normalizedPreferredID = preferredID?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+
+        if normalizedPreferredID == builtInPetID {
+            return nil
+        }
 
         if let preferredID, let selected = packs.first(where: { $0.id == preferredID }) {
             return selected
         }
 
         return packs.first
+    }
+
+    static func isBuiltInPetID(_ id: String) -> Bool {
+        id.trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased() == builtInPetID
     }
 }

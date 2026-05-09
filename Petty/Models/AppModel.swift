@@ -15,6 +15,7 @@ final class AppModel: ObservableObject {
     @Published private(set) var chatTitle = "Petty"
     @Published private(set) var appConfig: AppConfig
     @Published private(set) var petPack: PetPack?
+    @Published private(set) var petRenderToken = UUID()
     @Published private(set) var isChatPanelVisible = false
 
     private var bridge: AgentBridge
@@ -38,6 +39,7 @@ final class AppModel: ObservableObject {
     func applyConfiguration(_ configuration: AppConfig) {
         appConfig = configuration
         petPack = LocalPetPackStore.loadSelectedPetPack(preferredID: configuration.petId)
+        petRenderToken = UUID()
         errorText = nil
         dismissPetSpeech()
         configureAgentBridge(configuration.agent)

@@ -67,7 +67,8 @@ struct SettingsView: View {
                 Section {
                     Picker("Pet Pack", selection: $selectedPetID) {
                         Text("First available").tag("")
-                        ForEach(petPacks) { pack in
+                        Text(LocalPetPackStore.builtInPetDisplayName).tag(LocalPetPackStore.builtInPetID)
+                        ForEach(selectablePetPacks) { pack in
                             Text(pack.displayName).tag(pack.id)
                         }
                     }
@@ -250,6 +251,10 @@ struct SettingsView: View {
         case .custom:
             return !command.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         }
+    }
+
+    private var selectablePetPacks: [PetPack] {
+        petPacks.filter { !LocalPetPackStore.isBuiltInPetID($0.id) }
     }
 
     private var sessionExists: Bool {
